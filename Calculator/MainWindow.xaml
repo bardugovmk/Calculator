@@ -3,10 +3,314 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Calculator"
+        xmlns:viewModel="clr-namespace:Calculator.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" 
+        Height="550" 
+        Width="300"
+        Background="Transparent"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode= "NoResize"
+        WindowStartupLocation="CenterScreen"
+        Mouse.MouseDown="Window_MouseDown">
+    
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+
+    <Border Background="White"
+            CornerRadius="20"
+            BorderBrush="Black"
+            BorderThickness="1">
         
-    </Grid>
+        <Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="250*"/>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="btnClose" 
+                    Grid.Row="0"
+                    Height="25"
+                    Width="25" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"
+                    Margin="255,5,15,5" 
+                    Background="#FFE31F1F"
+                    BorderBrush="Red" 
+                    Click="btnClose_Click"
+                    Style="{StaticResource ExitButtonTheme}"
+                    />
+                <Button x:Name="btnMinimize" 
+                    Grid.Row="0"
+                    Height="25"
+                    Width="25" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"
+                    Margin="220,5,50,5" 
+                    Background="#FF1CDD1C"
+                    BorderBrush="Lime" 
+                    Click="btnMinimize_Click" 
+                    Style="{StaticResource MinimizedButtonTheme}"
+                    />
+
+                <TextBlock Grid.Row="0"
+                       Text="Калькулятор" 
+                       FontFamily="Noto Naskh Arabic UI"
+                       Margin="10,15,0,0" 
+                       HorizontalAlignment="Left" 
+                       VerticalAlignment="Top"
+                       />
+
+                <ToggleButton Style="{DynamicResource ToggleButtonTheme}" 
+                              x:Name="Tg_Btn"
+                              Grid.Row="1" 
+                              HorizontalAlignment="Right"
+                              VerticalAlignment="Top"
+                              Width="25"
+                              Height="25"
+                              Margin="0,5,15,0"
+                              BorderThickness="0"
+                              Unchecked="Tg_Btn_Unchecked" 
+                              Checked="Tg_Btn_Checked"
+                              >
+                    <ToggleButton.Background>
+                        <ImageBrush ImageSource="Assets/mainBtn_Default.png"
+                                    Stretch="Uniform"
+                                    />
+                    </ToggleButton.Background>
+                    <ToggleButton.Triggers>
+
+                        <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                            <BeginStoryboard>
+                                <Storyboard x:Name="HideStackPanel">
+                                    <DoubleAnimation Storyboard.TargetName="nav_pnl"
+                                                     Storyboard.TargetProperty="Width"
+                                                     BeginTime="0:0:0"
+                                                     From="230" To="0"
+                                                     Duration="0:0:0.2"
+                                                     >
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="ToggleButton.Checked">
+                            <BeginStoryboard>
+                                <Storyboard x:Name="ShowStackPanel">
+                                    <DoubleAnimation Storyboard.TargetName="nav_pnl"
+                                                     Storyboard.TargetProperty="Width"
+                                                     BeginTime="0:0:0"
+                                                     From="65" To="230"
+                                                     Duration="0:0:0.3"
+                                                     />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                    </ToggleButton.Triggers>
+                </ToggleButton>
+
+                <ContentControl x:Name="WorkingArea" 
+                                Grid.Row="2" 
+                                Margin="2.5,2.5,2.5,15" 
+                                Content="{Binding CurrentView}"
+                                Background="Black"
+                                PreviewMouseLeftButtonDown="BG_PreviewMouseLeftButtonDown"/>
+            </Grid>
+
+            <Grid Width="0" 
+                  HorizontalAlignment="Left"
+                  x:Name="nav_pnl">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="460*"/>
+                    <RowDefinition Height="35*"/>
+                </Grid.RowDefinitions>
+                
+                <Border Background="#E8E8E8"
+                  CornerRadius="20,0,0,0"
+                  Grid.Row="0"
+                  >
+                    <TextBlock Text="Меню"
+                               Margin="15,10,0,0"
+                               FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top"
+                        />
+                </Border>
+                <Border Background="Transparent"
+                        Grid.Row="2"
+                        >
+                    <Button Margin="0,2,0,0"
+                            Height="35"
+                            Width="230"
+                            Content="Настройки"
+                            Style="{StaticResource SettingsButtonTheme}"   
+                            BorderBrush="Transparent"
+                            >
+                    </Button>
+                </Border>
+
+                <Border Grid.Row="1"
+                  HorizontalAlignment="Center"
+                  Width="230"
+                  Background="#E8E8E8"
+                  Grid.RowSpan="1"
+                  CornerRadius="0,20,20,20" 
+                  Margin="0,0,0,0"
+                  >
+                    
+                    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                              Style="{StaticResource CustomScrollViewerStyle}"
+                              >
+
+                        <StackPanel x:Name="st_pnl"
+                            >
+                            <StackPanel  x:Name="LV"
+                                 Background="Transparent"
+                                 >
+                                <TextBlock Text="Калькулятор:"
+                                   Margin="5,5,0,0"
+                                   FontSize="14"
+                                   />
+                                <RadioButton Margin="0,0,0,0"
+                                     Style="{StaticResource MenuButtonTheme}" 
+                                     Command="{Binding StandardViewCommand}"
+                                     Height="50"
+                                     Width="230"
+                                     IsChecked="True"
+                                     Content="Обычный"
+                                     >
+                                </RadioButton>
+                                <TextBlock Text="Конвертатор:" 
+                                   Margin="5,0,0,0"
+                                   FontSize="14"
+                                   />
+
+                                <RadioButton Margin="0,0,0,0" 
+                                     Style="{StaticResource MenuButtonTheme}" 
+                                     Command="{Binding CurrencyViewCommand}"
+                                     Height="50"
+                                     Width="230"
+                                     Content="Валюта"
+                                     >
+                                </RadioButton>
+
+                                <RadioButton Margin="0,0,0,0" 
+                                     Style="{StaticResource MenuButtonTheme}" 
+                                     Command="{Binding VolumeViewCommand}"
+                                     Height="50"
+                                     Width="230"
+                                     Content="Объем"
+                                     >
+                                </RadioButton>
+
+                                <RadioButton Margin="0,0,0,0"
+                                     Style="{StaticResource MenuButtonTheme}"
+                                     Command="{Binding LengthViewCommand}"
+                                     Height="50"
+                                     Width="230"
+                                     Content="Длинна"
+                                     >
+                                </RadioButton>
+
+                                <RadioButton Margin="0,0,0,0"
+                                     Style="{StaticResource MenuButtonTheme}" 
+                                     Command="{Binding WeightAndMassViewCommand}"
+                                     Height="50"
+                                     Width="230"
+                                     Content="Вес и масса"
+                                     >
+                                </RadioButton>
+
+                                <RadioButton Margin="0,0,0,0"
+                                     Style="{StaticResource MenuButtonTheme}" 
+                                     Command="{Binding TemperatureViewCommand}"
+                                     Height="50"
+                                     Width="230"
+                                     Content="Температура"
+                                     >
+                                </RadioButton>
+
+                                <RadioButton Margin="0,0,0,0"
+                                     Style="{StaticResource MenuButtonTheme}" 
+                                     Command="{Binding EnergyViewCommand}"
+                                     Height="50"
+                                     Width="230"
+                                     Content="Энергия"
+                                     >
+                                </RadioButton>
+
+                                <RadioButton Margin="0,0,0,0"
+                                     Style="{StaticResource MenuButtonTheme}" 
+                                     Command="{Binding AreaViewCommand}"
+                                     Height="50"
+                                     Width="230"
+                                     Content="Площадь"
+                                     >
+                                </RadioButton>
+
+                                <RadioButton Margin="0,0,0,0"
+                                     Style="{StaticResource MenuButtonTheme}" 
+                                     Command="{Binding SpeedViewCommand}"
+                                     Height="50"
+                                     Width="230"
+                                     Content="Скорость"
+                                     >
+                                </RadioButton>
+
+                                <RadioButton Margin="0,0,0,0"
+                                     Style="{StaticResource MenuButtonTheme}"
+                                     Command="{Binding TimeViewCommand}"
+                                     Height="50"
+                                     Width="230"
+                                     Content="Время"
+                                     >
+                                </RadioButton>
+
+                                <RadioButton Margin="0,0,0,0"
+                                     Style="{StaticResource MenuButtonTheme}"
+                                     Command="{Binding PowerViewCommand}"
+                                     Height="50"
+                                     Width="230"
+                                     Content="Сила"
+                                     >
+                                </RadioButton>
+
+                                <RadioButton Margin="0,0,0,0"
+                                     Style="{StaticResource MenuButtonTheme}"
+                                     Command="{Binding DataViewCommand}"
+                                     Height="50"
+                                     Width="230"
+                                     Content="Данные"
+                                     >
+                                </RadioButton>
+
+                                <RadioButton Margin="0,0,0,0"
+                                     Style="{StaticResource MenuButtonTheme}"
+                                     Command="{Binding PressureViewCommand}"
+                                     Height="50"
+                                     Width="230"
+                                     Content="Давление"
+                                     >
+                                </RadioButton>
+
+                                <RadioButton Margin="0,0,0,0"
+                                     Style="{StaticResource MenuButtonTheme}"
+                                     Command="{Binding AngleViewCommand}"
+                                     Height="50"
+                                     Width="230"
+                                     Content="Угол"
+                                     >
+                                </RadioButton>
+                            </StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Border>
+            </Grid>
+        </Grid>
+    </Border>
 </Window>
