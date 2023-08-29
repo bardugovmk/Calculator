@@ -68,6 +68,7 @@
                   SelectionChanged="AreaUnitsConverting_SelectionChanged" 
                   Margin="0,0,2,0"
                   Style="{StaticResource RoundedComboBoxStyle}">
+            
             <TextBlock>Квадратные миллиметры</TextBlock>
             <TextBlock>Квадратные сантиметры</TextBlock>
             <TextBlock>Квадратные метры</TextBlock>

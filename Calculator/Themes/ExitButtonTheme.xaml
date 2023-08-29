@@ -9,67 +9,48 @@
                                StrokeDashArray="1 2" 
                                Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" 
                                SnapsToDevicePixels="true" 
-                               StrokeThickness="1"
-                               />
+                               StrokeThickness="1"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
 
     <SolidColorBrush x:Key="Button.Static.Background" 
-                     Color="#FFDDDDDD"
-                     />
+                     Color="#FFDDDDDD"/>
     <SolidColorBrush x:Key="Button.Static.Border" 
-                     Color="#FF707070"
-                     />
+                     Color="#FF707070"/>
     <SolidColorBrush x:Key="Button.MouseOver.Background" 
-                     Color="#FFBEE6FD"
-                     />
+                     Color="#FFBEE6FD"/>
     <SolidColorBrush x:Key="Button.MouseOver.Border" 
-                     Color="#FF3C7FB1"
-                     />
+                     Color="#FF3C7FB1"/>
     <SolidColorBrush x:Key="Button.Pressed.Background" 
-                     Color="#FFC4E5F6"
-                     />
+                     Color="#FFC4E5F6"/>
     <SolidColorBrush x:Key="Button.Pressed.Border" 
-                     Color="#FF2C628B"
-                     />
+                     Color="#FF2C628B"/>
     <SolidColorBrush x:Key="Button.Disabled.Background" 
-                     Color="#FFF4F4F4"
-                     />
+                     Color="#FFF4F4F4"/>
     <SolidColorBrush x:Key="Button.Disabled.Border" 
-                     Color="#FFADB2B5"
-                     />
+                     Color="#FFADB2B5"/>
     <SolidColorBrush x:Key="Button.Disabled.Foreground" 
-                     Color="#FF838383"
-                     />
+                     Color="#FF838383"/>
     <Style x:Key="ExitButtonTheme" 
-           TargetType="{x:Type Button}"
-           >
+           TargetType="{x:Type Button}">
         <Setter Property="FocusVisualStyle" 
-                Value="{StaticResource FocusVisual}"
-                />
+                Value="{StaticResource FocusVisual}"/>
         <Setter Property="Background" 
-                Value="#FF0000"
-                />
+                Value="#FF0000"/>
         <Setter Property="BorderBrush" 
-                Value="#FF3939"
-                />
+                Value="#FF3939"/>
         <Setter Property="Foreground" 
-                Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
-                />
+                Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
         <Setter Property="BorderThickness" 
-                Value="1"
-                />
+                Value="1"/>
         <Setter Property="HorizontalContentAlignment" 
-                Value="Center"
-                />
+                Value="Center"/>
         <Setter Property="VerticalContentAlignment" 
-                Value="Center"
-                />
+                Value="Center"/>
         <Setter Property="Padding" 
-                Value="1"
-                />
+                Value="1"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -78,37 +59,30 @@
                             BorderBrush="{TemplateBinding BorderBrush}" 
                             BorderThickness="{TemplateBinding BorderThickness}" 
                             SnapsToDevicePixels="true"
-                            CornerRadius="25"
-                            >
+                            CornerRadius="25">
                         <ContentPresenter x:Name="contentPresenter" 
                                           Focusable="False" 
                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
                                           Margin="{TemplateBinding Padding}" 
                                           RecognizesAccessKey="True" 
                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          />
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsDefaulted" 
-                                 Value="true"
-                                 >
+                                 Value="true">
                             <Setter Property="BorderBrush" 
                                     TargetName="border" 
-                                    Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"
-                                    />
+                                    Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" 
-                                 Value="true"
-                                 >
+                                 Value="true">
                             <Setter Property="Background" 
                                     TargetName="border" 
-                                    Value="#FF0000"
-                                    />
+                                    Value="#FF0000"/>
                             <Setter Property="BorderBrush" 
                                     TargetName="border" 
-                                    Value="#FF3939"
-                                    />
+                                    Value="#FF3939"/>
                         </Trigger>
                         <Trigger Property="IsPressed" 
                                  Value="true">
@@ -117,16 +91,14 @@
                                     <Storyboard>
                                         <DoubleAnimation  Storyboard.TargetProperty="Width" 
                                                           To="23" 
-                                                          Duration="0:0:0.3"
-                                                          >
+                                                          Duration="0:0:0.3">
                                             <DoubleAnimation.EasingFunction>
                                                 <CircleEase/>
                                             </DoubleAnimation.EasingFunction>
                                         </DoubleAnimation>
                                         <DoubleAnimation  Storyboard.TargetProperty="Height" 
                                                           To="23" 
-                                                          Duration="0:0:0.3"
-                                                          >
+                                                          Duration="0:0:0.3">
                                             <DoubleAnimation.EasingFunction>
                                                 <CircleEase/>
                                             </DoubleAnimation.EasingFunction>
@@ -140,40 +112,32 @@
                                     <Storyboard>
                                         <DoubleAnimation  Storyboard.TargetProperty="Width" 
                                                           To="25" 
-                                                          Duration="0:0:0.3"
-                                                          />
+                                                          Duration="0:0:0.3"/>
                                         <DoubleAnimation  Storyboard.TargetProperty="Height" 
                                                           To="25" 
-                                                          Duration="0:0:0.3"
-                                                          />
+                                                          Duration="0:0:0.3"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.ExitActions>
 
                             <Setter Property="Background" 
                                     TargetName="border" 
-                                    Value="#9D1111"
-                                    />
+                                    Value="#9D1111"/>
                             <Setter Property="BorderBrush" 
                                     TargetName="border" 
-                                    Value="#8C0505"
-                                    />
+                                    Value="#8C0505"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" 
-                                 Value="false"
-                                 >
+                                 Value="false">
                             <Setter Property="Background" 
                                     TargetName="border" 
-                                    Value="#9D1111"
-                                    />
+                                    Value="#9D1111"/>
                             <Setter Property="BorderBrush" 
                                     TargetName="border" 
-                                    Value="#8C0505"
-                                    />
+                                    Value="#8C0505"/>
                             <Setter Property="TextElement.Foreground" 
                                     TargetName="contentPresenter" 
-                                    Value="#FF0000"
-                                    />
+                                    Value="#FF0000"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

@@ -7,23 +7,20 @@
                 <ControlTemplate TargetType="ScrollViewer">
                     <Grid Background="{TemplateBinding Background}">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
 
-                        <!-- Область прокрутки -->
                         <ScrollContentPresenter Grid.Row="0" 
                                                 Grid.Column="0"
                                                 CanContentScroll="{TemplateBinding CanContentScroll}"
                                                 Content="{TemplateBinding Content}"
-                                                ContentTemplate="{TemplateBinding ContentTemplate}" 
-                                                />
+                                                ContentTemplate="{TemplateBinding ContentTemplate}"/>
 
-                        <!-- Горизонтальная полоса прокрутки -->
                         <ScrollBar x:Name="PART_HorizontalScrollBar" 
                                    Grid.Row="1" 
                                    Grid.Column="0"
@@ -31,10 +28,8 @@
                                    Value="{TemplateBinding HorizontalOffset}"
                                    Maximum="{TemplateBinding ScrollableWidth}"
                                    ViewportSize="{TemplateBinding ViewportWidth}"
-                                   Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" 
-                                   />
+                                   Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
 
-                        <!-- Вертикальная полоса прокрутки -->
                         <ScrollBar x:Name="PART_VerticalScrollBar" 
                                    Grid.Row="0" 
                                    Grid.Column="1"
@@ -42,8 +37,7 @@
                                    Value="{TemplateBinding VerticalOffset}"
                                    Maximum="{TemplateBinding ScrollableHeight}"
                                    ViewportSize="{TemplateBinding ViewportHeight}"
-                                   Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" 
-                                   />
+                                   Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

@@ -13,7 +13,7 @@ namespace Calculator.Views
 
         private void CEButton_Click(object sender, RoutedEventArgs e)
         {
-            InputText.Text = "";
+            InputText.Text = "0";
         }
         
         private void BackspaceButton_Click(object sender, RoutedEventArgs e)
@@ -25,6 +25,8 @@ namespace Calculator.Views
         private void NumberButton_Click(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
+            if (InputText.Text == "0")
+                InputText.Text = "";
             InputText.Text += button.Content.ToString();
         }
         
@@ -59,7 +61,7 @@ namespace Calculator.Views
                 }
                 int selectedItem1 = AreaUnitsBeforeConverting.SelectedIndex;
                 int selectedItem2 = AreaUnitsAfterConverting.SelectedIndex;
-                OutputText.Text = ConvertElement(num, selectedItem1, selectedItem2).ToString();
+                OutputText.Text = ConvertElement(num, selectedItem1, selectedItem2);
             }
         }
         
@@ -70,7 +72,7 @@ namespace Calculator.Views
             {
                 int selectedItem1 = AreaUnitsBeforeConverting.SelectedIndex;
                 int selectedItem2 = AreaUnitsAfterConverting.SelectedIndex;
-                OutputText.Text = ConvertElement(num, selectedItem1, selectedItem2).ToString();
+                OutputText.Text = ConvertElement(num, selectedItem1, selectedItem2);
             }
         }
         private string ConvertElement(double input, int selectedItem1, int selectedItem2)
@@ -192,13 +194,13 @@ namespace Calculator.Views
                     switch (selectedItem2)
                     {
                         case 0:
-                            result = input / 0.0000000001;
+                            result = input / 0.000000000001;
                             break;
                         case 1:
-                            result = input / 0.00000001;
+                            result = input / 0.0000000001;
                             break;
                         case 2:
-                            result = input / 0.0001;
+                            result = input / 0.000001;
                             break;
                         case 4:
                             result = input / 100;
@@ -210,7 +212,7 @@ namespace Calculator.Views
                             result = input * 107639.1041671;
                             break;
                         case 7:
-                            result = input * 1195990.0463011;
+                            result = input * 11959.9;
                             break;
                         case 8:
                             result = input * 2.4710538147;
@@ -227,31 +229,31 @@ namespace Calculator.Views
                     switch (selectedItem2)
                     {
                         case 0:
-                            result = input / 0.0000000001;
+                            result = input / 0.000000000001;
                             break;
                         case 1:
-                            result = input / 0.00000001;
+                            result = input / 0.0000000001;
                             break;
                         case 2:
-                            result = input / 1000000;
+                            result = input / 0.000001;
                             break;
                         case 3:
-                            result = input / 10000;
+                            result = input / 0.001;
                             break;
                         case 5:
-                            result = input / 1550003100.0062;
+                            result = input * 1550003100.0062;
                             break;
                         case 6:
-                            result = input / 10763910.41671;
+                            result = input * 10763910.41671;
                             break;
                         case 7:
-                            result = input / 11959900463.0109;
+                            result = input * 1195990;
                             break;
                         case 8:
-                            result = input / 247.10538147;
+                            result = input * 247.10538147;
                             break;
                         case 9:
-                            result = input / 0.386102159;
+                            result = input * 0.386102159;
                             break;
                         default:
                             return "ERROR";
@@ -262,31 +264,31 @@ namespace Calculator.Views
                     switch (selectedItem2)
                     {
                         case 0:
-                            result = input / 0.00064516;
+                            result = input * 645.16;
                             break;
                         case 1:
-                            result = input / 0.0064516;
+                            result = input * 6.4516;
                             break;
                         case 2:
-                            result = input / 0.00064516;
+                            result = input * 0.00064516;
                             break;
                         case 3:
-                            result = input / 0.0000000064516;
+                            result = input * 0.000000064516;
                             break;
                         case 4:
-                            result = input / 0.00000000064516;
+                            result = input * 0.00000000064516;
                             break;
                         case 6:
-                            result = input / 0.00694444;
+                            result = input * 0.00694444;
                             break;
                         case 7:
-                            result = input / 0.077161791;
+                            result = input * 0.00077161791;
                             break;
                         case 8:
-                            result = input / 0.0001594225;
+                            result = input * 0.0000001594225;
                             break;
                         case 9:
-                            result = input / 0.0000001594225;
+                            result = input * 0.000000000249098;
                             break;
                         default:
                             return "ERROR";
@@ -303,25 +305,25 @@ namespace Calculator.Views
                             result = input / 0.00107639;
                             break;
                         case 2:
-                            result = input / 0.09290304;
+                            result = input * 0.09290304;
                             break;
                         case 3:
-                            result = input / 0.0000009290304;
+                            result = input * 0.0000009290304;
                             break;
                         case 4:
-                            result = input / 0.000000009290304;
+                            result = input * 0.000000009290304;
                             break;
                         case 5:
-                            result = input / 144;
+                            result = input * 144;
                             break;
                         case 7:
-                            result = input / 11.959900463;
+                            result = input * 11.959900463;
                             break;
                         case 8:
-                            result = input / 0.0000229568;
+                            result = input * 0.0000229568;
                             break;
                         case 9:
-                            result = input / 0.0000000229568;
+                            result = input * 0.000000035870064;
                             break;
                         default:
                             return "ERROR";
@@ -356,7 +358,7 @@ namespace Calculator.Views
                             result = input / 0.0002066116;
                             break;
                         case 9:
-                            result = input / 0.0000002066116;
+                            result = input * 0.0000002066116;
                             break;
                         default:
                             return "ERROR";
@@ -433,7 +435,7 @@ namespace Calculator.Views
 
                     }
                 }
-                return result.ToString("0.#############");
+                return result.ToString("0.##################");
             }
         }
 

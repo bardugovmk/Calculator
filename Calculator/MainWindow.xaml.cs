@@ -38,7 +38,18 @@ namespace Calculator
         }
         private void BG_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Tg_Btn.IsChecked = false;
+            mainBtn.IsChecked = false;
+            
+        }
+
+        private void OverTheWindowsBtn_Checked(object sender, RoutedEventArgs e)
+        {
+            Topmost = true;
+        }
+
+        private void OverTheWindowsBtn_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Topmost = false;
         }
     }
 }

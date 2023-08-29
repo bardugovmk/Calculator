@@ -3,43 +3,34 @@
 
     <Style x:Key="MenuButtonTheme" 
            BasedOn="{StaticResource ResourceKey={x:Type ToggleButton}}" 
-           TargetType="{x:Type RadioButton}"
-           >
+           TargetType="{x:Type RadioButton}">
         <Style.Setters>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="RadioButton">
                         <Grid VerticalAlignment="Stretch" 
                               HorizontalAlignment="Stretch" 
-                              Background="{TemplateBinding Background}"
-                              >
+                              Background="{TemplateBinding Background}">
                             <TextBlock Text="{TemplateBinding Property=Content}" 
                                        Foreground="{TemplateBinding Foreground}" 
                                        VerticalAlignment="Center" 
                                        Margin="10,0,0,0" 
-                                       FontFamily="/Fonts/#Poppins" 
-                                       />
+                                       FontFamily="/Fonts/#Poppins"/>
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
 
             <Setter Property="Background" 
-                    Value="Transparent"
-                    />
+                    Value="Transparent"/>
             <Setter Property="BorderThickness" 
-                    Value="0"
-                    />
-
+                    Value="0"/>
         </Style.Setters>
         <Style.Triggers>
             <Trigger Property="IsChecked" 
-                     Value="True"
-                     >
+                     Value="True">
                 <Setter Property="Background" 
-                        Value="#B9B9B9"
-                        
-                        />
+                        Value="#B9B9B9"/>
             </Trigger>
         </Style.Triggers>
     </Style>

@@ -13,7 +13,7 @@ namespace Calculator.Views
 
         private void CEButton_Click(object sender, RoutedEventArgs e)
         {
-            InputText.Text = "";
+            InputText.Text = "0";
         }
         
         private void BackspaceButton_Click(object sender, RoutedEventArgs e)
@@ -25,6 +25,8 @@ namespace Calculator.Views
         private void NumberButton_Click(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
+            if (InputText.Text == "0")
+                InputText.Text = "";
             InputText.Text += button.Content.ToString();
         }
 
@@ -59,7 +61,7 @@ namespace Calculator.Views
                 }
                 int selectedItem1 = AngleUnitsBeforeConverting.SelectedIndex;
                 int selectedItem2 = AngleUnitsAfterConverting.SelectedIndex;
-                OutputText.Text = ConvertElement(num, selectedItem1, selectedItem2).ToString();
+                OutputText.Text = ConvertElement(num, selectedItem1, selectedItem2);
             }
         }
         private void AngleUnitsConverting_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -69,15 +71,13 @@ namespace Calculator.Views
             {
                 int selectedItem1 = AngleUnitsBeforeConverting.SelectedIndex;
                 int selectedItem2 = AngleUnitsAfterConverting.SelectedIndex;
-                OutputText.Text = ConvertElement(num, selectedItem1, selectedItem2).ToString();
+                OutputText.Text = ConvertElement(num, selectedItem1, selectedItem2);
             }
         }
          
         private string ConvertElement(double input, int selectedItem1, int selectedItem2)
         {
-            if ((selectedItem1 == selectedItem2) ||
-                (selectedItem1 == selectedItem2) ||
-                (selectedItem1 == selectedItem2))
+            if ((selectedItem1 == selectedItem2))
                 return input.ToString();
 
             else if (selectedItem1 == 0 && selectedItem2 == 1)

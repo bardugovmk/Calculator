@@ -14,7 +14,8 @@
                 <ResourceDictionary Source="Themes/ExitButtonTheme.xaml"/>
                 <ResourceDictionary Source="Themes/MinimizedButtonTheme.xaml"/>
                 <ResourceDictionary Source="Themes/SettingsButtonTheme.xaml"/>
-                <ResourceDictionary Source="Themes/ToggleButtonTheme.xaml"/>
+                <ResourceDictionary Source="Themes/MainBtnTheme.xaml"/>
+                <ResourceDictionary Source="Themes/OverTheWindowsButtonTheme.xaml"/>
                 <ResourceDictionary Source="Themes/RoundedComboBoxStyle.xaml"/>
                 <ResourceDictionary Source="Themes/TextBoxTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
@@ -35,44 +36,8 @@
                 <view:CurrencyView/>
             </DataTemplate>
 
-            <DataTemplate DataType="{x:Type viewModel:DataViewModel}">
-                <view:DataView/>
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type viewModel:EnergyViewModel}">
-                <view:EnergyView/>
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type viewModel:LengthViewModel}">
-                <view:LengthView/>
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type viewModel:PowerViewModel}">
-                <view:PowerView/>
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type viewModel:PressureViewModel}">
-                <view:PressureView/>
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type viewModel:SpeedViewModel}">
-                <view:SpeedView/>
-            </DataTemplate>
-
             <DataTemplate DataType="{x:Type viewModel:TemperatureViewModel}">
                 <view:TemperatureView/>
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type viewModel:TimeViewModel}">
-                <view:TimeView/>
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type viewModel:VolumeViewModel}">
-                <view:VolumeView/>
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type viewModel:WeightAndMassViewModel}">
-                <view:WeightAndMassView/>
             </DataTemplate>
 
         </ResourceDictionary>

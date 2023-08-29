@@ -3,43 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Calculator.Views"
              mc:Ignorable="d" 
              d:DesignHeight="439" 
              d:DesignWidth="293">
-    
+
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="35*"/>
-            <RowDefinition Height="60*"/>
+            <RowDefinition Height="61*"/>
             <RowDefinition Height="40*"/>
-            <RowDefinition Height="300*"/>
+            <RowDefinition Height="303*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock x:Name="LastUseInput" 
-                   Grid.Row="1" 
-                   TextWrapping="Wrap" 
-                   Text="0" 
-                   FontSize="22" 
-                   TextAlignment="Right" 
-                   Background="White" 
-                   Margin="4"
-                   />
+        <TextBox x:Name="InputText"
+                 Grid.Row="0" 
+                 TextWrapping="Wrap" 
+                 FontSize="16" 
+                 TextAlignment="Right" 
+                 Margin="4" 
+                 TextChanged="InputText_TextChanged" 
+                 Text="0"
+                 IsReadOnly="True"
+                 Style="{StaticResource TextBoxTheme}"/>
 
-        <TextBlock x:Name="OutputText" 
-                   TextWrapping="Wrap" 
-                   Text="0" 
-                   Grid.Row="0" 
-                   FontSize="24" 
-                   TextAlignment="Right" 
-                   Background="White"  
-                   Margin="4"
-                   />
+        <TextBox x:Name="OutputText" 
+                 TextWrapping="Wrap" 
+                 Grid.Row="1" 
+                 FontSize="22" 
+                 TextAlignment="Right" 
+                 Background="White"  
+                 Margin="4" 
+                 IsReadOnly="True"
+                 Style="{StaticResource TextBoxTheme}"/>
 
         <Grid x:Name="MemberPad"  
               Grid.Row="2"
-              Background="White"
-              >
+              Background="White">
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -107,8 +107,8 @@
 
         <Grid x:Name="NumPad"  
               Grid.Row="3"
-              Background="White"
-              >
+              Background="White">
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -133,7 +133,8 @@
                     Content="CE" 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="CEButton_Click"/>
 
             <Button Style="{StaticResource ActionsButtonTheme}" 
                     Grid.Row="0"
@@ -143,7 +144,8 @@
                     Content="C" 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="CButton_Click"/>
 
             <Button Style="{StaticResource ActionsButtonTheme}" 
                     Grid.Row="0"
@@ -153,7 +155,8 @@
                     FontSize="22"
                     Content="⌫" 
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="BackspaceButton_Click"/>
 
             <Button Style="{StaticResource SymbolsButtonTheme}" 
                     Grid.Row="0"
@@ -163,7 +166,8 @@
                     Content="(" 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="SymbolButton_Click"/>
 
             <Button Style="{StaticResource SymbolsButtonTheme}" 
                     Grid.Row="0"
@@ -173,7 +177,8 @@
                     Content=")" 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="SymbolButton_Click"/>
 
 
 
@@ -186,7 +191,8 @@
                     Content="7" 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="NumberButton_Click"/>
 
             <Button Style="{StaticResource SymbolsButtonTheme}" 
                     Grid.Row="1"
@@ -196,7 +202,8 @@
                     Content="8" 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="NumberButton_Click"/>
 
             <Button Style="{StaticResource SymbolsButtonTheme}" 
                     Grid.Row="1"
@@ -206,7 +213,8 @@
                     Content="9" 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="NumberButton_Click"/>
 
             <Button Style="{StaticResource ActionsButtonTheme}" 
                     Grid.Row="1"
@@ -216,7 +224,8 @@
                     Content="%" 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="SymbolButton_Click"/>
 
             <Button Style="{StaticResource ActionsButtonTheme}" 
                     Grid.Row="1"
@@ -226,7 +235,8 @@
                     Content="mod" 
                     FontSize="18"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="SymbolButton_Click"/>
 
 
 
@@ -239,7 +249,8 @@
                     Content="4" 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="NumberButton_Click"/>
 
             <Button Style="{StaticResource SymbolsButtonTheme}" 
                     Grid.Row="2"
@@ -249,7 +260,8 @@
                     Content="5" 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="NumberButton_Click"/>
 
             <Button Style="{StaticResource SymbolsButtonTheme}" 
                     Grid.Row="2"
@@ -259,7 +271,8 @@
                     Content="6" 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="NumberButton_Click"/>
 
             <Button Style="{StaticResource ActionsButtonTheme}" 
                     Grid.Row="2"
@@ -269,7 +282,8 @@
                     Content="÷" 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="SymbolButton_Click"/>
 
             <Button Style="{StaticResource ActionsButtonTheme}" 
                     Grid.Row="2"
@@ -279,7 +293,8 @@
                     Content="×" 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="SymbolButton_Click"/>
 
 
 
@@ -293,7 +308,8 @@
                     Content="1" 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="NumberButton_Click"/>
 
             <Button Style="{StaticResource SymbolsButtonTheme}" 
                     Grid.Row="3"
@@ -303,7 +319,8 @@
                     Content="2" 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="NumberButton_Click"/>
 
             <Button Style="{StaticResource SymbolsButtonTheme}" 
                     Grid.Row="3"
@@ -313,7 +330,8 @@
                     Content="3" 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="NumberButton_Click"/>
 
             <Button Style="{StaticResource ActionsButtonTheme}" 
                     Grid.Row="3"
@@ -323,7 +341,8 @@
                     Content="-" 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="SymbolButton_Click"/>
 
             <Button Style="{StaticResource ActionsButtonTheme}" 
                     Grid.Row="3"
@@ -333,7 +352,8 @@
                     Content="+" 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="SymbolButton_Click"/>
 
 
 
@@ -346,37 +366,41 @@
                     Content="0" 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="NumberButton_Click"/>
 
             <Button Style="{StaticResource SymbolsButtonTheme}" 
                     Grid.Row="4"
                     Grid.Column="1"
                     Width="45"
                     Height="45"
-                    Content="." 
+                    Content="," 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="SymbolButton_Click"/>
 
             <Button Style="{StaticResource SymbolsButtonTheme}" 
                     Grid.Row="4"
                     Grid.Column="2"
                     Width="45"
                     Height="45"
-                    Content="±" 
+                    Content="!" 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="SymbolButton_Click"/>
 
             <Button Style="{StaticResource ActionsButtonTheme}" 
                     Grid.Row="4"
                     Grid.Column="3"
                     Width="45"
                     Height="45"
-                    Content="" 
+                    Content="xʸ" 
                     FontSize="22"
                     Background="Transparent"
-                    BorderBrush="Transparent"/>
+                    BorderBrush="Transparent"
+                    Click="SymbolButton_Click"/>
 
             <Button Style="{StaticResource ActionsButtonTheme}" 
                     Grid.Row="4"
