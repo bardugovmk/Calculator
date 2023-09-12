@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush Color="#FFE17F" x:Key="ColorOne"/>
+    <SolidColorBrush Color="#FEBA3F" x:Key="ColorTwo"/>
+    <SolidColorBrush Color="#F58134" x:Key="ColorThree"/>
+
+    <SolidColorBrush Color="Black" x:Key="FontColor"/>
+
+    <ImageBrush ImageSource="/Assets/OrangeThemeBackground.png" x:Key="BackgroundImage"/>
+
+</ResourceDictionary>

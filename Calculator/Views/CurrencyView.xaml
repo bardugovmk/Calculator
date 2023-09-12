@@ -1,0 +1,297 @@
+﻿<UserControl x:Class="Calculator.Views.CurrencyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+             d:DesignHeight="439"
+             d:DesignWidth="293">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="145*"/>
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="InputText"
+                 Grid.Row="0"
+                 TextWrapping="Wrap"
+                 FontSize="22"
+                 TextAlignment="Right"
+                 Margin="4"
+                 TextChanged="InputText_TextChanged"
+                 IsReadOnly="True"
+                 Style="{StaticResource TextBoxTheme}"
+                 Foreground="{DynamicResource FontColor}"/>
+
+        <TextBlock x:Name="CurrencyUnitsBeforeConverting"
+                   Grid.Row="1"
+                   Width="160"
+                   HorizontalAlignment="Right"  
+                   Margin="0,0,2,0"
+                   Text="(Рубль (Россия" 
+                   FlowDirection="RightToLeft"
+                   Foreground="{DynamicResource FontColor}">
+        </TextBlock>
+
+
+        <TextBox x:Name="OutputText" 
+                 TextWrapping="Wrap" 
+                 Grid.Row="2" 
+                 FontSize="22" 
+                 TextAlignment="Right" 
+                 Background="White"  
+                 Margin="4" 
+                 IsReadOnly="True"
+                 Style="{StaticResource TextBoxTheme}"
+                 Foreground="{DynamicResource FontColor}"/>
+
+        <ComboBox x:Name="CurrencyUnitsAfterConverting"
+                  Background="White" 
+                  Grid.Row="3"
+                  Width="160"
+                  HorizontalAlignment="Right"
+                  SelectedIndex="1"
+                  SelectionChanged="CurrencyUnitsConverting_SelectionChanged" 
+                  Margin="0,0,2,0"
+                  Style="{StaticResource RoundedComboBoxStyle}"
+                  Foreground="{DynamicResource FontColor}">
+
+            <TextBlock>Доллар (США)</TextBlock>
+            <TextBlock>Рубль (Беларусь)</TextBlock>
+            <TextBlock>Юань (Китай)</TextBlock>
+            <TextBlock>Евро (ЕС)</TextBlock>
+        </ComboBox>
+
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0"
+                       Text="Курс ЦБ РФ" 
+                       FlowDirection="RightToLeft"
+                       Foreground="{DynamicResource FontColor}"/>
+
+            <TextBox x:Name="CourseUpdaDteate"
+                     Background="White" 
+                     Grid.Column="1"
+                     Foreground="{DynamicResource FontColor}"
+                     IsReadOnly="True"
+                     FlowDirection="RightToLeft"
+                     Margin="0,0,0,0"
+                     Style="{StaticResource TextBoxTheme}" 
+                     TextChanged="CourseUpdaDteate_TextChanged"/>
+
+            <Button x:Name="UpdateCourse"
+                    Grid.Column="2"
+                    Content="Обновить курс"
+                    Foreground="{DynamicResource FontColor}"
+                    Background="Transparent"
+                    Click="UpdateCourse_Click"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"/>
+        </Grid>
+
+        <Grid x:Name="NumPad"  
+              Grid.Row="5"
+              Grid.RowSpan="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button Style="{StaticResource ActionsButtonTheme}" 
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Width="45"
+                    Height="45"
+                    Content="CE" 
+                    FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
+                    Background="Transparent"
+                    BorderBrush="Transparent" 
+                    Click="CEButton_Click"/>
+
+            <Button Style="{StaticResource ActionsButtonTheme}" 
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Width="45"
+                    Height="45"
+                    FontSize="22"
+                    Content="⌫" 
+                    Foreground="{DynamicResource FontColor}"
+                    Background="Transparent"
+                    BorderBrush="Transparent" 
+                    Click="BackspaceButton_Click"/>
+
+
+
+            <Button Style="{StaticResource SymbolsButtonTheme}" 
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Width="45"
+                    Height="45"
+                    Content="7" 
+                    FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    Click="NumberButton_Click"/>
+
+            <Button Style="{StaticResource SymbolsButtonTheme}" 
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Width="45"
+                    Height="45"
+                    Content="8" 
+                    FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
+                    Background="Transparent"
+                    BorderBrush="Transparent" 
+                    Click="NumberButton_Click"/>
+
+            <Button Style="{StaticResource SymbolsButtonTheme}" 
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Width="45"
+                    Height="45"
+                    Content="9" 
+                    FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
+                    Background="Transparent"
+                    BorderBrush="Transparent" 
+                    Click="NumberButton_Click"/>
+
+
+
+            <Button Style="{StaticResource SymbolsButtonTheme}" 
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Width="45"
+                    Height="45"
+                    Content="4" 
+                    FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
+                    Background="Transparent"
+                    BorderBrush="Transparent" 
+                    Click="NumberButton_Click"/>
+
+            <Button Style="{StaticResource SymbolsButtonTheme}" 
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Width="45"
+                    Height="45"
+                    Content="5" 
+                    FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
+                    Background="Transparent"
+                    BorderBrush="Transparent" 
+                    Click="NumberButton_Click"/>
+
+            <Button Style="{StaticResource SymbolsButtonTheme}" 
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    Width="45"
+                    Height="45"
+                    Content="6" 
+                    FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
+                    Background="Transparent"
+                    BorderBrush="Transparent" 
+                    Click="NumberButton_Click"/>
+
+
+
+            <Button Style="{StaticResource SymbolsButtonTheme}" 
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Width="45"
+                    Height="45"
+                    Content="1" 
+                    FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
+                    Background="Transparent"
+                    BorderBrush="Transparent" 
+                    Click="NumberButton_Click"/>
+
+            <Button Style="{StaticResource SymbolsButtonTheme}" 
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Width="45"
+                    Height="45"
+                    Content="2" 
+                    FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
+                    Background="Transparent"
+                    BorderBrush="Transparent" 
+                    Click="NumberButton_Click"/>
+
+            <Button Style="{StaticResource SymbolsButtonTheme}" 
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    Width="45"
+                    Height="45"
+                    Content="3" 
+                    FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
+                    Background="Transparent"
+                    BorderBrush="Transparent" 
+                    Click="NumberButton_Click"/>
+
+
+
+            <Button Style="{StaticResource SymbolsButtonTheme}" 
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Width="45"
+                    Height="45"
+                    Content="0" 
+                    FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
+                    Background="Transparent"
+                    BorderBrush="Transparent" 
+                    Click="NumberButton_Click"/>
+
+            <Button Style="{StaticResource SymbolsButtonTheme}" 
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Width="45"
+                    Height="45"
+                    Content="," 
+                    FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
+                    Background="Transparent"
+                    BorderBrush="Transparent" 
+                    Click="PointButton_Click"/>
+
+            <Button Style="{StaticResource SymbolsButtonTheme}" 
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    Width="45"
+                    Height="45"
+                    Content="±" 
+                    FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
+                    Background="Transparent"
+                    BorderBrush="Transparent" 
+                    Click="MinusButton_Click"/>
+        </Grid>
+    </Grid>
+</UserControl>
