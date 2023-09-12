@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush Color="#FFFFFF" x:Key="ColorOne"/>
+    <SolidColorBrush Color="#D1D1D1" x:Key="ColorTwo"/>
+    <SolidColorBrush Color="#B9B9B9" x:Key="ColorThree"/>
+
+    <SolidColorBrush Color="Black" x:Key="FontColor"/>
+
+    <ImageBrush ImageSource="/Assets/LightThemeBackground.png" x:Key="BackgroundImage"/>
+</ResourceDictionary>

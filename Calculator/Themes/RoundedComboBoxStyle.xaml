@@ -7,37 +7,39 @@
                 <ControlTemplate TargetType="ComboBox">
                     <Grid>
                         <ToggleButton x:Name="ToggleButton"
-                                  Background="{TemplateBinding Background}"
-                                  BorderBrush="{TemplateBinding BorderBrush}"
-                                  BorderThickness="{TemplateBinding BorderThickness}"
-                                  Foreground="{TemplateBinding Foreground}"
-                                  HorizontalAlignment="Stretch"
-                                  Padding="3"
-                                  IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
-                            <ContentPresenter/>
+                                      Background="{DynamicResource ColorThree}"
+                                      BorderBrush="Black"
+                                      BorderThickness="0"
+                                      Foreground="{TemplateBinding Foreground}"
+                                      HorizontalAlignment="Stretch"
+                                      Padding="3"
+                                      IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
                         </ToggleButton>
+
                         <ContentPresenter x:Name="ContentPresenter"
-                                      ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
-                                      Content="{TemplateBinding SelectionBoxItem}"
-                                      HorizontalAlignment="Left"
-                                      Margin="5, 0, 0, 0"
-                                      VerticalAlignment="Center"
-                                      SnapsToDevicePixels="True"/>
+                                          ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                          Content="{TemplateBinding SelectionBoxItem}"
+                                          HorizontalAlignment="Left"
+                                          Margin="5,0,0,0"
+                                          VerticalAlignment="Center"
+                                          SnapsToDevicePixels="True"/>
+
                         <Popup x:Name="Popup"
-                           AllowsTransparency="True"
-                           IsOpen="{TemplateBinding IsDropDownOpen}"
-                           Placement="Bottom"
-                           Focusable="False"
-                           PopupAnimation="Slide">
+                               AllowsTransparency="True"
+                               IsOpen="{TemplateBinding IsDropDownOpen}"
+                               Placement="Bottom"
+                               Focusable="False"
+                               PopupAnimation="Slide">
+
                             <Grid x:Name="DropDown"
-                              SnapsToDevicePixels="True"
-                              MinWidth="{TemplateBinding ActualWidth}"
-                              MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                  SnapsToDevicePixels="True"
+                                  MinWidth="{TemplateBinding ActualWidth}"
+                                  MaxHeight="{TemplateBinding MaxDropDownHeight}">
                                 <Border x:Name="DropDownBorder"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    CornerRadius="5">
+                                        Background="{DynamicResource ColorOne}"
+                                        BorderBrush="{DynamicResource ColorTwo}"
+                                        BorderThickness="1"
+                                        CornerRadius="5">
                                     <ScrollViewer>
                                         <ItemsPresenter/>
                                     </ScrollViewer>

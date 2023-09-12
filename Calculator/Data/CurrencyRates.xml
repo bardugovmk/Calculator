@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CurrencyRates>
+  <Date>2023-09-12</Date>
+  <Currency>
+    <Code>USD</Code>
+    <Rate>96,5083</Rate>
+  </Currency>
+  <Currency>
+    <Code>BYN</Code>
+    <Rate>29,6666</Rate>
+  </Currency>
+  <Currency>
+    <Code>CNY</Code>
+    <Rate>13,1975</Rate>
+  </Currency>
+  <Currency>
+    <Code>EUR</Code>
+    <Rate>103,5332</Rate>
+  </Currency>
+</CurrencyRates>

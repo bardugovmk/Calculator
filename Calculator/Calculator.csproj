@@ -59,6 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Core\AppTheme.cs" />
     <Compile Include="Core\AsyncRelayCommand.cs" />
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="ViewModels\AreaViewModel.cs" />
     <Compile Include="ViewModels\CurrencyViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\StandardViewModel.cs" />
     <Compile Include="ViewModels\TemperatureViewModel.cs" />
     <Compile Include="Views\AngleView.xaml.cs">
@@ -76,6 +78,9 @@
     </Compile>
     <Compile Include="Views\CurrencyView.xaml.cs">
       <DependentUpon>CurrencyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\StandardView.xaml.cs">
       <DependentUpon>StandardView.xaml</DependentUpon>
@@ -107,6 +112,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\LinkButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\MainBtnTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\MenuButtonTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -135,7 +148,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\MainBtnTheme.xaml">
+    <Page Include="UIThemes\DarkTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIThemes\KiwiTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIThemes\LightTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIThemes\OrangeTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIThemes\PayloadTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIThemes\RiverTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -148,6 +181,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CurrencyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -187,6 +224,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Assets\icons\" />
+    <Folder Include="Assets\NewFolder1\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -202,6 +241,25 @@
   <ItemGroup>
     <Resource Include="Assets\OverTheWindowsBtn_MouseOver.png" />
     <Resource Include="Assets\OverTheWindowsBtn_Default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\gmail_icon.png" />
+    <Resource Include="Assets\in_icon.png" />
+    <Resource Include="Assets\telegram_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\CurrencyRates.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\DarkThemeBackground.png" />
+    <Resource Include="Assets\KiwiThemeBackground.png" />
+    <Resource Include="Assets\LightThemeBackground.png" />
+    <Resource Include="Assets\OrangeThemeBackground.png" />
+    <Resource Include="Assets\PayloadThemeBackground.png" />
+    <Resource Include="Assets\RiverThemeBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\UIThemes.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

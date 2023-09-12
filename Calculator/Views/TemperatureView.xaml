@@ -8,7 +8,7 @@
              d:DesignHeight="439" 
              d:DesignWidth="293">
 
-    <Grid Background="White">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25*"/>
             <RowDefinition Height="10*"/>
@@ -25,16 +25,17 @@
                    Margin="4" 
                    TextChanged="InputText_TextChanged" 
                    IsReadOnly="True"
-                   Style="{StaticResource TextBoxTheme}"/>
+                   Style="{StaticResource TextBoxTheme}"
+                   Foreground="{DynamicResource FontColor}"/>
 
         <ComboBox x:Name="TemperatureUnitsBeforeConverting"
-                  Background="White" 
                   Grid.Row="1"
                   Width="160"
                   HorizontalAlignment="Right" 
                   SelectedIndex="1"
                   SelectionChanged="TemperatureUnitsConverting_SelectionChanged" 
                   Margin="0,0,2,0"
+                  Foreground="{DynamicResource FontColor}"
                   Style="{StaticResource RoundedComboBoxStyle}">
 
             <TextBlock>Шкала Фаренгейта</TextBlock>
@@ -46,20 +47,20 @@
                    TextWrapping="Wrap" 
                    Grid.Row="2" 
                    FontSize="22" 
-                   TextAlignment="Right" 
-                   Background="White"  
+                   TextAlignment="Right"
                    Margin="4" 
                    IsReadOnly="True"
+                   Foreground="{DynamicResource FontColor}"
                    Style="{StaticResource TextBoxTheme}"/>
 
         <ComboBox x:Name="TemperatureUnitsAfterConverting"
-                  Background="White" 
                   Grid.Row="3"
                   Width="160"
                   HorizontalAlignment="Right"
                   SelectedIndex="1"
                   SelectionChanged="TemperatureUnitsConverting_SelectionChanged" 
                   Margin="0,0,2,0"
+                  Foreground="{DynamicResource FontColor}"
                   Style="{StaticResource RoundedComboBoxStyle}">
             
             <TextBlock>Шкала Фаренгейта</TextBlock>
@@ -68,9 +69,8 @@
         </ComboBox>
         <Grid x:Name="NumPad"  
               Grid.Row="4"
-              Background="White" 
-              Grid.RowSpan="1"
-              >
+              Grid.RowSpan="1">
+            
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -92,6 +92,7 @@
                     Height="45"
                     Content="CE" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="CEButton_Click"/>
@@ -103,6 +104,7 @@
                     Height="45"
                     FontSize="22"
                     Content="⌫" 
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="BackspaceButton_Click"/>
@@ -116,6 +118,7 @@
                     Height="45"
                     Content="7" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent"
                     Click="NumberButton_Click"/>
@@ -127,6 +130,7 @@
                     Height="45"
                     Content="8" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="NumberButton_Click"/>
@@ -138,6 +142,7 @@
                     Height="45"
                     Content="9" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="NumberButton_Click"/>
@@ -151,6 +156,7 @@
                     Height="45"
                     Content="4" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="NumberButton_Click"/>
@@ -162,6 +168,7 @@
                     Height="45"
                     Content="5" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="NumberButton_Click"/>
@@ -173,6 +180,7 @@
                     Height="45"
                     Content="6" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="NumberButton_Click"/>
@@ -186,6 +194,7 @@
                     Height="45"
                     Content="1" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="NumberButton_Click"/>
@@ -197,6 +206,7 @@
                     Height="45"
                     Content="2" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="NumberButton_Click"/>
@@ -208,6 +218,7 @@
                     Height="45"
                     Content="3" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="NumberButton_Click"/>
@@ -221,6 +232,7 @@
                     Height="45"
                     Content="0" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="NumberButton_Click"/>
@@ -232,6 +244,7 @@
                     Height="45"
                     Content="," 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="PointButton_Click"/>
@@ -243,6 +256,7 @@
                     Height="45"
                     Content="±" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="MinusButton_Click"/>

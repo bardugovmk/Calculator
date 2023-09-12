@@ -55,7 +55,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border x:Name="border" 
-                            Background="{TemplateBinding Background}" 
+                            Background="{DynamicResource ColorOne}" 
                             BorderBrush="{TemplateBinding BorderBrush}" 
                             BorderThickness="{TemplateBinding BorderThickness}" 
                             SnapsToDevicePixels="true"
@@ -79,7 +79,7 @@
                                  Value="true">
                             <Setter Property="Background" 
                                     TargetName="border" 
-                                    Value="#E8E8E8"/>
+                                    Value="{DynamicResource ColorTwo}"/>
                             <Setter Property="BorderBrush" 
                                     TargetName="border" 
                                     Value="Transparent"/>
@@ -88,7 +88,7 @@
                                  Value="true">
                             <Setter Property="Background" 
                                     TargetName="border" 
-                                    Value="#FF707070"/>
+                                    Value="{DynamicResource ColorThree}"/>
                             <Setter Property="BorderBrush" 
                                     TargetName="border" 
                                     Value="Transparent"/>

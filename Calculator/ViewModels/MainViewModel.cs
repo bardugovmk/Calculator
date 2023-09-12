@@ -10,12 +10,15 @@ namespace Calculator.ViewModels
         public ICommand AreaViewCommand { get; set; }
         public ICommand CurrencyViewCommand { get; set; }
         public ICommand TemperatureViewCommand { get; set; }
+        public ICommand SettingsViewCommand { get; set; }
 
         public StandardViewModel StandardVM { get; set; }
         public AngleViewModel AngleVM { get; set; }
         public AreaViewModel AreaVM { get; set; }
         public CurrencyViewModel CurrencyVM { get; set; }
         public TemperatureViewModel TemperatureVM { get; set; }
+        public SettingsViewModel SettingsVM { get; set; }
+
 
         private object _currentView;
 
@@ -33,6 +36,7 @@ namespace Calculator.ViewModels
             AreaVM = new AreaViewModel();
             CurrencyVM = new CurrencyViewModel();
             TemperatureVM = new TemperatureViewModel();
+            SettingsVM = new SettingsViewModel();
 
             CurrentView = StandardVM;
 
@@ -41,6 +45,7 @@ namespace Calculator.ViewModels
             AreaViewCommand = new RelayCommand(_ => CurrentView = AreaVM);
             CurrencyViewCommand = new RelayCommand(_ => CurrentView = CurrencyVM);
             TemperatureViewCommand = new RelayCommand(_ => CurrentView = TemperatureVM);
+            SettingsViewCommand = new RelayCommand(_ => CurrentView = SettingsVM);
         }
     }
 }

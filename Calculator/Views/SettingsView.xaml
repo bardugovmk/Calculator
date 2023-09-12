@@ -1,0 +1,182 @@
+﻿<UserControl x:Class="Calculator.Views.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="439" 
+             d:DesignWidth="293">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="75*"/>
+        </Grid.RowDefinitions>
+
+        <WrapPanel Grid.Row="0">
+            <TextBlock Text="Параметры" 
+                       FontWeight="Medium"
+                       Margin="10,5,5,5"
+                       FontSize="22"
+                       Foreground="{DynamicResource FontColor}"/>
+        </WrapPanel>
+
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="Внешний вид" 
+                       FontWeight="Medium"
+                       Margin="10,15,5,5"
+                       FontSize="13"
+                       Foreground="{DynamicResource FontColor}"/>
+
+            <ComboBox x:Name="UIThemeController"
+                      Background="White"
+                      Grid.Row="1"
+                      Width="160"
+                      Height="20"
+                      HorizontalAlignment="Left"
+                      Style="{StaticResource RoundedComboBoxStyle}"
+                      Margin="5,5,0,0"
+                      Foreground="{DynamicResource FontColor}"
+                      SelectionChanged="UIThemeController_SelectionChanged">
+
+                <TextBlock Text="Темная тема"
+                           Foreground="{DynamicResource FontColor}">
+                    <Image>
+                        
+                    </Image>
+                </TextBlock>
+                
+                <TextBlock Text="Киви"
+                           Foreground="{DynamicResource FontColor}">
+                    <Image>
+                        
+                    </Image>
+                </TextBlock>
+
+                <TextBlock Text="Светлая тема"
+                           Foreground="{DynamicResource FontColor}">
+                    <Image>
+                        
+                    </Image>
+                </TextBlock>
+
+                <TextBlock Text="Апельсин"
+                           Foreground="{DynamicResource FontColor}">
+                    <Image>
+                        
+                    </Image>
+                </TextBlock>
+
+                <TextBlock Text="PayloadTheme"
+                           Foreground="{DynamicResource FontColor}">
+                    <Image>
+                        
+                    </Image>
+                </TextBlock>
+
+                <TextBlock Text="Речька"
+                           Foreground="{DynamicResource FontColor}">
+                    <Image>
+                        
+                    </Image>
+                </TextBlock>
+            </ComboBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <TextBlock Text="Сведения" 
+                       FontWeight="Medium"
+                       Margin="10,15,5,5"
+                       FontSize="13"
+                       Foreground="{DynamicResource FontColor}"/>
+            
+            <TextBlock Text="Калькулятор 1.0 © Бардюгов Михаил, 04.09.2023" 
+                       Margin="10,0,5,5"
+                       FontSize="12.5" 
+                       TextWrapping="Wrap"
+                       Foreground="{DynamicResource FontColor}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3">
+            <TextBlock Text="Связатся со мной" 
+                       FontWeight="Medium"
+                       Margin="10,15,5,5"
+                       FontSize="12"
+                       Foreground="{DynamicResource FontColor}"/>
+            
+            <Grid Grid.Row="4" 
+                  VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                    <Button Height="45" 
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Width="45"
+                            HorizontalAlignment="Center"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Style="{StaticResource LinkButtonTheme}" 
+                            VerticalAlignment="Center" 
+                            Click="GmailLinkButton_Click">
+                        <Image Source="/Assets/gmail_icon.png"/>
+                    </Button>
+
+                    <Button Height="45" 
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Width="45"
+                            HorizontalAlignment="Center"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Style="{StaticResource LinkButtonTheme}" 
+                            VerticalAlignment="Center"
+                            Click="LinkedinLinkButton_Click">
+                    <Image Source="/Assets/in_icon.png"/>
+                    </Button>
+
+                    <Button Height="45" 
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Width="45"
+                            HorizontalAlignment="Center"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Style="{StaticResource LinkButtonTheme}" 
+                            VerticalAlignment="Center"
+                            Click="TelegramLinkButton_Click">
+                    <Image Source="/Assets/telegram_icon.png"/>
+                    </Button>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4">
+            <TextBlock Text="Помощь в разработке" 
+                       FontWeight="Medium"
+                       Margin="10,15,5,5"
+                       FontSize="13"
+                       Foreground="{DynamicResource FontColor}"/>
+
+            <TextBlock Margin="10,5,5,5" 
+                       FontSize="12" 
+                       TextWrapping="Wrap"
+                       Foreground="{DynamicResource FontColor}">
+                
+                <Run Text="GitHub." Foreground="{DynamicResource FontColor}"/>
+                <Run Text="Чтобы узнать, как вы можете помочь в разработке моего калькулятора, изучите проект на " Foreground="{DynamicResource FontColor}"/>
+                <Hyperlink NavigateUri="https://www.google.com" 
+                           TargetName="_blank" 
+                           Click="HyperlinkButton_Click">
+                    <Run Text="GitHub"/>
+                </Hyperlink>
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -18,11 +18,11 @@ namespace Calculator
             }
         }
 
-        private void btnClose_Click(object sender, RoutedEventArgs e)
+        private void ButtonClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        private void ButtonMinimize_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
         }
@@ -39,7 +39,6 @@ namespace Calculator
         private void BG_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             mainBtn.IsChecked = false;
-            
         }
 
         private void OverTheWindowsBtn_Checked(object sender, RoutedEventArgs e)

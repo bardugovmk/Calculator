@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush Color="#A9FBA9" x:Key="ColorOne"/>
+    <SolidColorBrush Color="#2CE12C" x:Key="ColorTwo"/>
+    <SolidColorBrush Color="#11AE11" x:Key="ColorThree"/>
+
+    <SolidColorBrush Color="Black" x:Key="FontColor"/>
+
+    <ImageBrush ImageSource="/Assets/KiwiThemeBackground.png" x:Key="BackgroundImage"/>
+
+</ResourceDictionary>

@@ -4,6 +4,7 @@
              xmlns:viewModel="clr-namespace:Calculator.ViewModels"
              xmlns:view="clr-namespace:Calculator.Views"
              StartupUri="MainWindow.xaml">
+
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -18,7 +19,11 @@
                 <ResourceDictionary Source="Themes/OverTheWindowsButtonTheme.xaml"/>
                 <ResourceDictionary Source="Themes/RoundedComboBoxStyle.xaml"/>
                 <ResourceDictionary Source="Themes/TextBoxTheme.xaml"/>
+                <ResourceDictionary Source="Themes/LinkButtonTheme.xaml"/>
+
+                <ResourceDictionary Source="UIThemes/LightTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            
             
             <DataTemplate DataType="{x:Type viewModel:StandardViewModel}">
                 <view:StandardView/>
@@ -38,6 +43,10 @@
 
             <DataTemplate DataType="{x:Type viewModel:TemperatureViewModel}">
                 <view:TemperatureView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:SettingsViewModel}">
+                <view:SettingsView/>
             </DataTemplate>
 
         </ResourceDictionary>

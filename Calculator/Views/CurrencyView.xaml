@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             d:DesignHeight="439" 
+             mc:Ignorable="d"
+             d:DesignHeight="439"
              d:DesignWidth="293">
 
-    <Grid Background="White">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25*"/>
             <RowDefinition Height="10*"/>
@@ -18,23 +18,24 @@
         </Grid.RowDefinitions>
 
         <TextBox x:Name="InputText"
-                 Grid.Row="0" 
-                 TextWrapping="Wrap" 
-                 FontSize="22" 
-                 TextAlignment="Right" 
-                 Margin="4" 
-                 TextChanged="InputText_TextChanged" 
+                 Grid.Row="0"
+                 TextWrapping="Wrap"
+                 FontSize="22"
+                 TextAlignment="Right"
+                 Margin="4"
+                 TextChanged="InputText_TextChanged"
                  IsReadOnly="True"
-                 Style="{StaticResource TextBoxTheme}"/>
+                 Style="{StaticResource TextBoxTheme}"
+                 Foreground="{DynamicResource FontColor}"/>
 
         <TextBlock x:Name="CurrencyUnitsBeforeConverting"
-                   Background="White" 
                    Grid.Row="1"
                    Width="160"
                    HorizontalAlignment="Right"  
                    Margin="0,0,2,0"
                    Text="(Рубль (Россия" 
-                   FlowDirection="RightToLeft">
+                   FlowDirection="RightToLeft"
+                   Foreground="{DynamicResource FontColor}">
         </TextBlock>
 
 
@@ -46,7 +47,8 @@
                  Background="White"  
                  Margin="4" 
                  IsReadOnly="True"
-                 Style="{StaticResource TextBoxTheme}"/>
+                 Style="{StaticResource TextBoxTheme}"
+                 Foreground="{DynamicResource FontColor}"/>
 
         <ComboBox x:Name="CurrencyUnitsAfterConverting"
                   Background="White" 
@@ -56,7 +58,8 @@
                   SelectedIndex="1"
                   SelectionChanged="CurrencyUnitsConverting_SelectionChanged" 
                   Margin="0,0,2,0"
-                  Style="{StaticResource RoundedComboBoxStyle}">
+                  Style="{StaticResource RoundedComboBoxStyle}"
+                  Foreground="{DynamicResource FontColor}">
 
             <TextBlock>Доллар (США)</TextBlock>
             <TextBlock>Рубль (Беларусь)</TextBlock>
@@ -68,27 +71,36 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            
-            <Button x:Name="Update"
-                    Background="White" 
-                    Grid.Column="1"
-                    Content="Обновить курс"
-                    Foreground="Gray" 
-                    Padding="5,1,1,1" Click="Update_Click"/>
 
-            <TextBlock x:Name="CourseUpdaDteate"
-                       Background="White" 
-                       Grid.Column="0"
-                       Foreground="Black"
+            <TextBlock Grid.Column="0"
                        Text="Курс ЦБ РФ" 
-                       FlowDirection="RightToLeft" 
-                       Margin="2,2,2,2"/>
+                       FlowDirection="RightToLeft"
+                       Foreground="{DynamicResource FontColor}"/>
+
+            <TextBox x:Name="CourseUpdaDteate"
+                     Background="White" 
+                     Grid.Column="1"
+                     Foreground="{DynamicResource FontColor}"
+                     IsReadOnly="True"
+                     FlowDirection="RightToLeft"
+                     Margin="0,0,0,0"
+                     Style="{StaticResource TextBoxTheme}" 
+                     TextChanged="CourseUpdaDteate_TextChanged"/>
+
+            <Button x:Name="UpdateCourse"
+                    Grid.Column="2"
+                    Content="Обновить курс"
+                    Foreground="{DynamicResource FontColor}"
+                    Background="Transparent"
+                    Click="UpdateCourse_Click"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"/>
         </Grid>
 
         <Grid x:Name="NumPad"  
               Grid.Row="5"
-              Background="White" 
               Grid.RowSpan="1">
 
             <Grid.ColumnDefinitions>
@@ -112,6 +124,7 @@
                     Height="45"
                     Content="CE" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="CEButton_Click"/>
@@ -123,6 +136,7 @@
                     Height="45"
                     FontSize="22"
                     Content="⌫" 
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="BackspaceButton_Click"/>
@@ -136,6 +150,7 @@
                     Height="45"
                     Content="7" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent"
                     Click="NumberButton_Click"/>
@@ -147,6 +162,7 @@
                     Height="45"
                     Content="8" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="NumberButton_Click"/>
@@ -158,6 +174,7 @@
                     Height="45"
                     Content="9" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="NumberButton_Click"/>
@@ -171,6 +188,7 @@
                     Height="45"
                     Content="4" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="NumberButton_Click"/>
@@ -182,6 +200,7 @@
                     Height="45"
                     Content="5" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="NumberButton_Click"/>
@@ -193,6 +212,7 @@
                     Height="45"
                     Content="6" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="NumberButton_Click"/>
@@ -206,6 +226,7 @@
                     Height="45"
                     Content="1" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="NumberButton_Click"/>
@@ -217,6 +238,7 @@
                     Height="45"
                     Content="2" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="NumberButton_Click"/>
@@ -228,6 +250,7 @@
                     Height="45"
                     Content="3" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="NumberButton_Click"/>
@@ -241,6 +264,7 @@
                     Height="45"
                     Content="0" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="NumberButton_Click"/>
@@ -252,6 +276,7 @@
                     Height="45"
                     Content="," 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="PointButton_Click"/>
@@ -263,6 +288,7 @@
                     Height="45"
                     Content="±" 
                     FontSize="22"
+                    Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="MinusButton_Click"/>

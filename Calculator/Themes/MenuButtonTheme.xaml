@@ -12,7 +12,7 @@
                               HorizontalAlignment="Stretch" 
                               Background="{TemplateBinding Background}">
                             <TextBlock Text="{TemplateBinding Property=Content}" 
-                                       Foreground="{TemplateBinding Foreground}" 
+                                       Foreground="{DynamicResource FontColor}" 
                                        VerticalAlignment="Center" 
                                        Margin="10,0,0,0" 
                                        FontFamily="/Fonts/#Poppins"/>
@@ -30,7 +30,7 @@
             <Trigger Property="IsChecked" 
                      Value="True">
                 <Setter Property="Background" 
-                        Value="#B9B9B9"/>
+                        Value="{DynamicResource ColorThree}"/>
             </Trigger>
         </Style.Triggers>
     </Style>
