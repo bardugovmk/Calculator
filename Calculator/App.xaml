@@ -8,17 +8,21 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Themes/SymbolsButtonTheme.xaml"/>
-                <ResourceDictionary Source="Themes/ActionsButtonTheme.xaml"/>
+                <ResourceDictionary Source="Themes/ProgramHeaderButton/ExitButtonTheme.xaml"/>
+                <ResourceDictionary Source="Themes/ProgramHeaderButton/MainBtnTheme.xaml"/>
+                <ResourceDictionary Source="Themes/ProgramHeaderButton/MinimizedButtonTheme.xaml"/>
+                <ResourceDictionary Source="Themes/ProgramHeaderButton/OverTheWindowsButtonTheme.xaml"/>
+
+                
+                <ResourceDictionary Source="Themes/StylesForWorkspace/SymbolsButtonTheme.xaml"/>
+                <ResourceDictionary Source="Themes/StylesForWorkspace/ActionsButtonTheme.xaml"/>
+                <ResourceDictionary Source="Themes/StylesForWorkspace/RoundedComboBoxStyle.xaml"/>
+                <ResourceDictionary Source="Themes/StylesForWorkspace/TextBoxTheme.xaml"/>
+
+
                 <ResourceDictionary Source="Themes/MenuButtonTheme.xaml"/>
                 <ResourceDictionary Source="Themes/CustomScrollViewerStyle.xaml"/>
-                <ResourceDictionary Source="Themes/ExitButtonTheme.xaml"/>
-                <ResourceDictionary Source="Themes/MinimizedButtonTheme.xaml"/>
                 <ResourceDictionary Source="Themes/SettingsButtonTheme.xaml"/>
-                <ResourceDictionary Source="Themes/MainBtnTheme.xaml"/>
-                <ResourceDictionary Source="Themes/OverTheWindowsButtonTheme.xaml"/>
-                <ResourceDictionary Source="Themes/RoundedComboBoxStyle.xaml"/>
-                <ResourceDictionary Source="Themes/TextBoxTheme.xaml"/>
                 <ResourceDictionary Source="Themes/LinkButtonTheme.xaml"/>
 
                 <ResourceDictionary Source="UIThemes/LightTheme.xaml"/>

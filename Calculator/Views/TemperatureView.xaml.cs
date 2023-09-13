@@ -32,11 +32,14 @@ namespace Calculator.Views
 
         private void MinusButton_Click(object sender, RoutedEventArgs e)
         {
-            Button button = (Button)sender;
-            if (button.Content.ToString() == "±" && InputText.Text[0] != '-')
-                InputText.Text = "-" + InputText.Text;
-            else
-                InputText.Text = InputText.Text.Remove(0, 1);
+            if(InputText.Text != "")
+            {
+                Button button = (Button)sender;
+                if (button.Content.ToString() == "±" && InputText.Text[0] != '-')
+                    InputText.Text = "-" + InputText.Text;
+                else
+                    InputText.Text = InputText.Text.Remove(0, 1);
+            }
         }
 
         private void PointButton_Click(object sender, RoutedEventArgs e)

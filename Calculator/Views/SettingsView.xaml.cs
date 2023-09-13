@@ -4,6 +4,9 @@ using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
+using System.Xml.Linq;
+using System.IO;
+using System.Xml;
 
 namespace Calculator.Views
 {
@@ -12,6 +15,11 @@ namespace Calculator.Views
         public SettingsView()
         {
             InitializeComponent();
+
+            string folderPath = AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug", "");
+            string filePath = Path.Combine(folderPath, "Data", "UITheme.xml");
+            LoadCurrencyRatesFromXml(filePath);
+            UIThemeController.SelectedIndex = currentThemeIndex;
         }
         private void GmailLinkButton_Click(object sender, RoutedEventArgs e)
         {
@@ -46,6 +54,54 @@ namespace Calculator.Views
         {
             currentThemeIndex = UIThemeController.SelectedIndex;
             AppTheme.ChangeTheme(themes[currentThemeIndex]);
+            SaveThemeSelectedToXml();
+        }
+        private void SaveThemeSelectedToXml()
+        {
+            try
+            {
+                string folderPath = AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug", "");
+                string filePath = Path.Combine(folderPath, "Data", "UITheme.xml");
+                
+                XDocument doc = new XDocument(
+                    new XElement("UITheme",
+                        new XElement("ThemeSelected", currentThemeIndex.ToString(""))
+                    )
+                );
+                
+                doc.Save(filePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Произошла ошибка при сохранении данных о выбранной теме: " + ex.Message);
+            }
+        }
+        private int GetSelectedThemeIndex(XmlDocument xmlDoc)
+        {
+            XmlNode themeSelectedNode = xmlDoc.SelectSingleNode("/UITheme/ThemeSelected");
+            if (themeSelectedNode != null)
+            {
+                int themeIndex;
+                if (int.TryParse(themeSelectedNode.InnerText, out themeIndex))
+                {
+                    return themeIndex;
+                }
+            }
+            return 0; // Возвращаем индекс темы по умолчанию, если узел не найден или значение некорректно
+        }
+        private void LoadCurrencyRatesFromXml(string filePath)
+        {
+            try
+            {
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load(filePath);
+
+                currentThemeIndex = GetSelectedThemeIndex(xmlDoc);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Произошла ошибка при загрузке данных из XML: " + ex.Message);
+            }
         }
     }
 }

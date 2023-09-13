@@ -7,6 +7,9 @@
 
     <SolidColorBrush Color="Black" x:Key="FontColor"/>
 
-    <ImageBrush ImageSource="/Assets/KiwiThemeBackground.png" x:Key="BackgroundImage"/>
+    <ImageBrush ImageSource="/Assets/BackgroundImage/KiwiThemeBackground.png" x:Key="BackgroundImage"/>
 
+    <ImageBrush ImageSource="/Assets/MainMenuButton/MainBtn_BlackTheme.png" x:Key="MainButton"/>
+    <ImageBrush ImageSource="/Assets/MainMenuButton/OverTheWindowsBtn_BlackTheme.png" x:Key="OverTheWindowsButton"/>
+    
 </ResourceDictionary>

@@ -32,57 +32,52 @@
                        Foreground="{DynamicResource FontColor}"/>
 
             <ComboBox x:Name="UIThemeController"
-                      Background="White"
+                      Background="Transparent"
+                      BorderBrush="White"
                       Grid.Row="1"
                       Width="160"
-                      Height="20"
+                      Height="30"
                       HorizontalAlignment="Left"
                       Style="{StaticResource RoundedComboBoxStyle}"
                       Margin="5,5,0,0"
                       Foreground="{DynamicResource FontColor}"
                       SelectionChanged="UIThemeController_SelectionChanged">
 
-                <TextBlock Text="Темная тема"
-                           Foreground="{DynamicResource FontColor}">
-                    <Image>
-                        
-                    </Image>
-                </TextBlock>
+                <WrapPanel>
+                    <Image Source="/Assets/ThemeIco/DarkIco.png"/>
+                    <TextBlock Text="Темная тема"
+                               Foreground="{DynamicResource FontColor}"/>
+                </WrapPanel>
+
+                <WrapPanel>
+                    <Image Source="/Assets/ThemeIco/KiwiIco.png"/>
+                    <TextBlock Text="Киви"
+                               Foreground="{DynamicResource FontColor}"/>
+                </WrapPanel>
                 
-                <TextBlock Text="Киви"
-                           Foreground="{DynamicResource FontColor}">
-                    <Image>
-                        
-                    </Image>
-                </TextBlock>
+                <WrapPanel>
+                    <Image Source="/Assets/ThemeIco/LightIco.png"/>
+                    <TextBlock Text="Светлая тема"
+                               Foreground="{DynamicResource FontColor}"/>
+                </WrapPanel>
 
-                <TextBlock Text="Светлая тема"
-                           Foreground="{DynamicResource FontColor}">
-                    <Image>
-                        
-                    </Image>
-                </TextBlock>
+                <WrapPanel>
+                    <Image Source="/Assets/ThemeIco/OrangeIco.png"/>
+                    <TextBlock Text="Апельсин"
+                               Foreground="{DynamicResource FontColor}"/>
+                </WrapPanel>
 
-                <TextBlock Text="Апельсин"
-                           Foreground="{DynamicResource FontColor}">
-                    <Image>
-                        
-                    </Image>
-                </TextBlock>
+                <WrapPanel>
+                    <Image Source="/Assets/ThemeIco/PayloadIco.png"/>
+                    <TextBlock Text="PayloadTheme"
+                               Foreground="{DynamicResource FontColor}"/>
+                </WrapPanel>
 
-                <TextBlock Text="PayloadTheme"
-                           Foreground="{DynamicResource FontColor}">
-                    <Image>
-                        
-                    </Image>
-                </TextBlock>
-
-                <TextBlock Text="Речька"
-                           Foreground="{DynamicResource FontColor}">
-                    <Image>
-                        
-                    </Image>
-                </TextBlock>
+                <WrapPanel>
+                    <Image Source="/Assets/ThemeIco/RiverIco.png"/>
+                    <TextBlock Text="Речька"
+                               Foreground="{DynamicResource FontColor}"/>
+                </WrapPanel>
             </ComboBox>
         </StackPanel>
 
@@ -126,7 +121,7 @@
                             Style="{StaticResource LinkButtonTheme}" 
                             VerticalAlignment="Center" 
                             Click="GmailLinkButton_Click">
-                        <Image Source="/Assets/gmail_icon.png"/>
+                    <Image Source="/Assets/SettingsLink/gmail_icon.png"/>
                     </Button>
 
                     <Button Height="45" 
@@ -139,7 +134,7 @@
                             Style="{StaticResource LinkButtonTheme}" 
                             VerticalAlignment="Center"
                             Click="LinkedinLinkButton_Click">
-                    <Image Source="/Assets/in_icon.png"/>
+                    <Image Source="/Assets/SettingsLink/linkedin_icon.png"/>
                     </Button>
 
                     <Button Height="45" 
@@ -152,7 +147,7 @@
                             Style="{StaticResource LinkButtonTheme}" 
                             VerticalAlignment="Center"
                             Click="TelegramLinkButton_Click">
-                    <Image Source="/Assets/telegram_icon.png"/>
+                    <Image Source="/Assets/SettingsLink/telegram_icon.png"/>
                     </Button>
             </Grid>
         </StackPanel>

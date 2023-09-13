@@ -100,7 +100,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Themes\ActionsButtonTheme.xaml">
+    <Page Include="Themes\StylesForWorkspace\ActionsButtonTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,7 +108,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\ExitButtonTheme.xaml">
+    <Page Include="Themes\ProgramHeaderButton\ExitButtonTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -116,7 +116,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\MainBtnTheme.xaml">
+    <Page Include="Themes\ProgramHeaderButton\MainBtnTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -124,15 +124,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\MinimizedButtonTheme.xaml">
+    <Page Include="Themes\ProgramHeaderButton\MinimizedButtonTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\OverTheWindowsButtonTheme.xaml">
+    <Page Include="Themes\ProgramHeaderButton\OverTheWindowsButtonTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\RoundedComboBoxStyle.xaml">
+    <Page Include="Themes\StylesForWorkspace\RoundedComboBoxStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -140,11 +140,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\SymbolsButtonTheme.xaml">
+    <Page Include="Themes\StylesForWorkspace\SymbolsButtonTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\TextBoxTheme.xaml">
+    <Page Include="Themes\StylesForWorkspace\TextBoxTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -224,42 +224,46 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\icons\" />
-    <Folder Include="Assets\NewFolder1\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Calc.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\mainBtn_Default.png" />
-    <Resource Include="Assets\mainBtn_MouseOver.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Assets\Baka.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\OverTheWindowsBtn_MouseOver.png" />
-    <Resource Include="Assets\OverTheWindowsBtn_Default.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\gmail_icon.png" />
-    <Resource Include="Assets\in_icon.png" />
-    <Resource Include="Assets\telegram_icon.png" />
+    <Resource Include="Assets\SettingsLink\gmail_icon.png" />
+    <Resource Include="Assets\SettingsLink\linkedin_icon.png" />
+    <Resource Include="Assets\SettingsLink\telegram_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Data\CurrencyRates.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\DarkThemeBackground.png" />
-    <Resource Include="Assets\KiwiThemeBackground.png" />
-    <Resource Include="Assets\LightThemeBackground.png" />
-    <Resource Include="Assets\OrangeThemeBackground.png" />
-    <Resource Include="Assets\PayloadThemeBackground.png" />
-    <Resource Include="Assets\RiverThemeBackground.png" />
+    <Resource Include="Assets\BackgroundImage\DarkThemeBackground.png" />
+    <Resource Include="Assets\BackgroundImage\KiwiThemeBackground.png" />
+    <Resource Include="Assets\BackgroundImage\LightThemeBackground.png" />
+    <Resource Include="Assets\BackgroundImage\OrangeThemeBackground.png" />
+    <Resource Include="Assets\BackgroundImage\PayloadThemeBackground.png" />
+    <Resource Include="Assets\BackgroundImage\RiverThemeBackground.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Data\UIThemes.xml" />
+    <Resource Include="Data\UITheme.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\MainMenuButton\MainBtn_BlackTheme.png" />
+    <Resource Include="Assets\MainMenuButton\MainBtn_WhiteTheme.png" />
+    <Resource Include="Assets\MainMenuButton\OverTheWindowsBtn_BlackTheme.png" />
+    <Resource Include="Assets\MainMenuButton\OverTheWindowsBtn_WhiteTheme.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\ThemeIco\DarkIco.png" />
+    <Resource Include="Assets\ThemeIco\KiwiIco.png" />
+    <Resource Include="Assets\ThemeIco\LightIco.png" />
+    <Resource Include="Assets\ThemeIco\OrangeIco.png" />
+    <Resource Include="Assets\ThemeIco\PayloadIco.png" />
+    <Resource Include="Assets\ThemeIco\RiverIco.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

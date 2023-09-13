@@ -13,7 +13,8 @@
         AllowsTransparency="True"
         ResizeMode= "NoResize"
         WindowStartupLocation="CenterScreen"
-        Mouse.MouseDown="Window_MouseDown">
+        Mouse.MouseDown="Window_MouseDown"
+        Icon="/Assets/Calc.ico">
 
     <Window.DataContext>
         <viewModel:MainViewModel/>
@@ -35,26 +36,26 @@
                        Grid.RowSpan="3">
                 </Image>
 
-                
+
                 <Button x:Name="ButtonClose" 
                         Grid.Row="0"
                         Height="25"
                         Width="25" 
                         HorizontalAlignment="Center" 
                         VerticalAlignment="Center"
-                        Margin="255,5,15,5" 
+                        Margin="255,5,15,5"
                         Background="#FFE31F1F"
-                        BorderBrush="Red" 
+                        BorderBrush="Red"
                         Click="ButtonClose_Click"
                         Style="{StaticResource ExitButtonTheme}"/>
 
                 <Button x:Name="ButtonMinimize" 
                         Grid.Row="0"
                         Height="25"
-                        Width="25" 
-                        HorizontalAlignment="Center" 
+                        Width="25"
+                        HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Margin="220,5,50,5" 
+                        Margin="220,5,50,5"
                         Background="#FF1CDD1C"
                         BorderBrush="Lime" 
                         Click="ButtonMinimize_Click" 
@@ -69,7 +70,7 @@
                            Foreground="{DynamicResource FontColor}"/>
 
                 <ToggleButton Style="{DynamicResource OverTheWindowsButtonTheme}" 
-                              x:Name="OverTheWindowsBtn"
+                              x:Name="OverTheWindowsButton"
                               Grid.Row="1" 
                               HorizontalAlignment="Right"
                               VerticalAlignment="Top"
@@ -77,17 +78,12 @@
                               Height="30"
                               Margin="0,5,50,0"
                               BorderThickness="0"
-                              Unchecked="OverTheWindowsBtn_Unchecked" 
-                              Checked="OverTheWindowsBtn_Checked">
-
-                    <ToggleButton.Background>
-                        <ImageBrush ImageSource="Assets/OverTheWindowsBtn_Default.png"
-                                    Stretch="Uniform"/>
-                    </ToggleButton.Background>
+                              Unchecked="OverTheWindowsButton_Unchecked" 
+                              Checked="OverTheWindowsButton_Checked">
                 </ToggleButton>
 
                 <ToggleButton Style="{DynamicResource MainBtnTheme}" 
-                              x:Name="mainBtn"
+                              x:Name="MainButton"
                               Grid.Row="1" 
                               HorizontalAlignment="Right"
                               VerticalAlignment="Top"
@@ -95,19 +91,18 @@
                               Height="30"
                               Margin="0,5,15,0"
                               BorderThickness="0"
-                              Unchecked="Tg_Btn_Unchecked" 
-                              Checked="Tg_Btn_Checked">
-
+                              Unchecked="ToggleButton_Unchecked" 
+                              Checked="ToggleButton_Checked">
+                    
                     <ToggleButton.Background>
-                        <ImageBrush ImageSource="Assets/mainBtn_Default.png"
-                                    Stretch="Uniform"/>
+                        <ImageBrush ImageSource="/Assets/MainMenuButton/MainBtn_BlackTheme.png"/>
                     </ToggleButton.Background>
                     <ToggleButton.Triggers>
 
                         <EventTrigger RoutedEvent="ToggleButton.Unchecked">
                             <BeginStoryboard>
                                 <Storyboard x:Name="HideStackPanel">
-                                    <DoubleAnimation Storyboard.TargetName="nav_pnl"
+                                    <DoubleAnimation Storyboard.TargetName="MenuPanel"
                                                      Storyboard.TargetProperty="Width"
                                                      BeginTime="0:0:0"
                                                      From="230" To="0"
@@ -119,7 +114,7 @@
                         <EventTrigger RoutedEvent="ToggleButton.Checked">
                             <BeginStoryboard>
                                 <Storyboard x:Name="ShowStackPanel">
-                                    <DoubleAnimation Storyboard.TargetName="nav_pnl"
+                                    <DoubleAnimation Storyboard.TargetName="MenuPanel"
                                                      Storyboard.TargetProperty="Width"
                                                      BeginTime="0:0:0"
                                                      From="65" To="230"
@@ -143,7 +138,8 @@
 
             <Grid Width="0" 
                   HorizontalAlignment="Left"
-                  x:Name="nav_pnl">
+                  x:Name="MenuPanel">
+                
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40*"/>
                     <RowDefinition Height="460*"/>
@@ -191,7 +187,8 @@
 
                                 <TextBlock Text="Калькулятор:"
                                            Margin="5,5,0,0"
-                                           FontSize="14"/>
+                                           FontSize="14"
+                                           Foreground="{DynamicResource FontColor}"/>
 
                                 <RadioButton Margin="0,0,0,0"
                                              Style="{StaticResource MenuButtonTheme}" 
@@ -200,10 +197,11 @@
                                              Width="230"
                                              IsChecked="True"
                                              Content="Обычный"/>
-                                
+
                                 <TextBlock Text="Конвертатор:" 
                                            Margin="5,0,0,0"
-                                           FontSize="14"/>
+                                           FontSize="14"
+                                           Foreground="{DynamicResource FontColor}"/>
 
                                 <RadioButton Margin="0,0,0,0" 
                                              Style="{StaticResource MenuButtonTheme}" 

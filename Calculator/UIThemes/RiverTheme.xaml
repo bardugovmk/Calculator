@@ -7,6 +7,9 @@
 
     <SolidColorBrush Color="White" x:Key="FontColor"/>
 
-    <ImageBrush ImageSource="/Assets/RiverThemeBackground.png" x:Key="BackgroundImage"/>
-    
+    <ImageBrush ImageSource="/Assets/BackgroundImage/RiverThemeBackground.png" x:Key="BackgroundImage"/>
+
+    <ImageBrush ImageSource="/Assets/MainMenuButton/MainBtn_WhiteTheme.png" x:Key="MainButton"/>
+    <ImageBrush ImageSource="/Assets/MainMenuButton/OverTheWindowsBtn_WhiteTheme.png" x:Key="OverTheWindowsButton"/>
+
 </ResourceDictionary>
