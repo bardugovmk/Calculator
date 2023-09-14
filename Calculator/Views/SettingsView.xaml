@@ -9,10 +9,10 @@
     
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50*"/>
-            <RowDefinition Height="75*"/>
-            <RowDefinition Height="50*"/>
-            <RowDefinition Height="75*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="55*"/>
             <RowDefinition Height="75*"/>
         </Grid.RowDefinitions>
 
@@ -84,13 +84,19 @@
         <StackPanel Grid.Row="2">
             <TextBlock Text="Сведения" 
                        FontWeight="Medium"
-                       Margin="10,15,5,5"
+                       Margin="10,5,5,5"
                        FontSize="13"
                        Foreground="{DynamicResource FontColor}"/>
             
             <TextBlock Text="Калькулятор 1.0 © Бардюгов Михаил, 04.09.2023" 
                        Margin="10,0,5,5"
                        FontSize="12.5" 
+                       TextWrapping="Wrap"
+                       Foreground="{DynamicResource FontColor}"/>
+            
+            <TextBlock Text="Курсы валют в валютном калькуляторе получены с сайта ЦБ РФ" 
+                       Margin="10,0,5,5"
+                       FontSize="11.5" 
                        TextWrapping="Wrap"
                        Foreground="{DynamicResource FontColor}"/>
         </StackPanel>

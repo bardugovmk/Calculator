@@ -47,18 +47,6 @@ namespace Calculator.Views
             InputText.Text += button.Content.ToString();
         }
 
-        private void MinusButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (InputText.Text != "")
-            {
-                Button button = (Button)sender;
-                if (button.Content.ToString() == "±" && InputText.Text[0] != '-')
-                    InputText.Text = "-" + InputText.Text;
-                else
-                    InputText.Text = InputText.Text.Remove(0, 1);
-            }
-        }
-
         private void PointButton_Click(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
@@ -114,7 +102,7 @@ namespace Calculator.Views
                 default:
                     return "ERROR";
             }
-            return result.ToString("0.##################");
+            return result.ToString("0.##");
         }
 
         private void UpdateCourse_Click(object sender, RoutedEventArgs e)
@@ -143,7 +131,7 @@ namespace Calculator.Views
             }
             else
             {
-                MessageBox.Show("Отсутствует подключение к интернету. Пожалуйста, проверьте ваше соединение и повторите попытку.");
+                SaveInfo.Text = "Отсутствует подключение к интернету.";
             }
         }
 
@@ -179,7 +167,7 @@ namespace Calculator.Views
 
                 XDocument doc = new XDocument(
                     new XElement("CurrencyRates",
-                        new XElement("Date", DateTime.Now.ToString("yyyy-MM-dd")),
+                        new XElement("Date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
                         new XElement("Currency",
                             new XElement("Code", "USD"),
                             new XElement("Rate", currencyData_USDollar.ToString("0.##################"))),
@@ -196,11 +184,11 @@ namespace Calculator.Views
                 );
 
                 doc.Save(filePath);
-                MessageBox.Show("Данные о курсах валют успешно сохранены в XML-файл.");
+                SaveInfo.Text ="Данные о курсах валют обновлены";
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Произошла ошибка при сохранении данных: " + ex.Message);
+                SaveInfo.Text = "Произошла ошибка при загрузке данных";
             }
         }
 
@@ -218,7 +206,7 @@ namespace Calculator.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Произошла ошибка при загрузке данных из XML: " + ex.Message);
+                MessageBox.Show("Произошла ошибка при загрузке данных из памяти!!!: " + ex.Message);
             }
         }
 
@@ -251,17 +239,14 @@ namespace Calculator.Views
             try
             {
                 XDocument doc = XDocument.Load(filePath);
-
                 string lastUpdateDate = ExtractLastUpdateDate(doc);
-
-                CourseUpdaDteate.Text = lastUpdateDate;
+                CourseUpdaDteate.Text = "Дата и время обновления:" + lastUpdateDate;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Произошла ошибка: " + ex.Message);
             }
         }
-
         private string ExtractLastUpdateDate(XDocument doc)
         {
             XElement dateElement = doc.Root.Element("Date");

@@ -3,7 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModel="clr-namespace:Calculator.ViewModels"
-        xmlns:Core="clr-namespace:Calculator.Core" x:Class="Calculator.MainWindow"
+        x:Class="Calculator.MainWindow"
         mc:Ignorable="d"
         Title="Калькулятор" 
         Height="550" 

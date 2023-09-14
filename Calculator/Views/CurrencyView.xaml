@@ -14,6 +14,7 @@
             <RowDefinition Height="25*"/>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
             <RowDefinition Height="145*"/>
         </Grid.RowDefinitions>
 
@@ -69,38 +70,44 @@
 
         <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2.3*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column="0"
-                       Text="Курс ЦБ РФ" 
-                       FlowDirection="RightToLeft"
-                       Foreground="{DynamicResource FontColor}"/>
-
-            <TextBox x:Name="CourseUpdaDteate"
-                     Background="White" 
-                     Grid.Column="1"
-                     Foreground="{DynamicResource FontColor}"
-                     IsReadOnly="True"
-                     FlowDirection="RightToLeft"
-                     Margin="0,0,0,0"
-                     Style="{StaticResource TextBoxTheme}" 
-                     TextChanged="CourseUpdaDteate_TextChanged"/>
+            <TextBlock x:Name="SaveInfo"
+                       Background="Transparent" 
+                       Grid.Column="0"
+                       FontSize="11"
+                       Foreground="{DynamicResource FontColor}"
+                       FlowDirection="RightToLeft"/>
 
             <Button x:Name="UpdateCourse"
-                    Grid.Column="2"
+                    Grid.Column="1"
                     Content="Обновить курс"
                     Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     Click="UpdateCourse_Click"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center" 
+                    Margin="0,0,2,0"/>
+        </Grid>
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="CourseUpdaDteate"
+                     Background="White" 
+                     Foreground="{DynamicResource FontColor}"
+                     IsReadOnly="True"
+                     FlowDirection="RightToLeft"
+                     FontSize="12"
+                     Style="{StaticResource TextBoxTheme}" 
+                     TextChanged="CourseUpdaDteate_TextChanged"/>
         </Grid>
 
         <Grid x:Name="NumPad"  
-              Grid.Row="5"
+              Grid.Row="6"
               Grid.RowSpan="1">
 
             <Grid.ColumnDefinitions>
@@ -280,18 +287,6 @@
                     Background="Transparent"
                     BorderBrush="Transparent" 
                     Click="PointButton_Click"/>
-
-            <Button Style="{StaticResource SymbolsButtonTheme}" 
-                    Grid.Row="4"
-                    Grid.Column="2"
-                    Width="45"
-                    Height="45"
-                    Content="±" 
-                    FontSize="22"
-                    Foreground="{DynamicResource FontColor}"
-                    Background="Transparent"
-                    BorderBrush="Transparent" 
-                    Click="MinusButton_Click"/>
         </Grid>
     </Grid>
 </UserControl>

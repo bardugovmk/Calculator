@@ -18,7 +18,7 @@ namespace Calculator.Views
 
             string folderPath = AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug", "");
             string filePath = Path.Combine(folderPath, "Data", "UITheme.xml");
-            LoadCurrencyRatesFromXml(filePath);
+            LoadThemeFromXml(filePath);
             UIThemeController.SelectedIndex = currentThemeIndex;
         }
         private void GmailLinkButton_Click(object sender, RoutedEventArgs e)
@@ -89,7 +89,7 @@ namespace Calculator.Views
             }
             return 0; // Возвращаем индекс темы по умолчанию, если узел не найден или значение некорректно
         }
-        private void LoadCurrencyRatesFromXml(string filePath)
+        private void LoadThemeFromXml(string filePath)
         {
             try
             {

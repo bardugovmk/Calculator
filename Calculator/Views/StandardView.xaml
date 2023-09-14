@@ -112,7 +112,7 @@
                     Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent"
-                    Click="NumberButton_Click"/>
+                    Click="SymbolButton_Click"/>
 
             <Button Style="{StaticResource SymbolsButtonTheme}" 
                     Grid.Row="0"
@@ -124,7 +124,7 @@
                     Foreground="{DynamicResource FontColor}"
                     Background="Transparent"
                     BorderBrush="Transparent"
-                    Click="NumberButton_Click"/>
+                    Click="SymbolButton_Click"/>
 
 
 
