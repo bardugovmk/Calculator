@@ -1,6 +1,6 @@
 # Calculator
 
-This application is my Pet-project in which I want to try to copy Windows Calculator
+This application is my Pet-project in which I want to try to create Windows Calculator
 
 12.09.2023 - 
 Right before downloading the progress, I found several bugs and errors. There are errors when trying to perform the mod operation. I would also like to edit some styles. I will try to fix it during September.
